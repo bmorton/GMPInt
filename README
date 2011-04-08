@@ -11,12 +11,22 @@ Copyright (c) 2011 Brian Morton. All rights reserved.
 
 
 To use this with Xcode 4:
-	1. Install brew if you don't already have it (https://github.com/mxcl/homebrew)
-	2. Run "sudo brew install gmp"
-	3. Add these files to your Xcode project.
-	4. In Xcode, click on your project file and goto your target.
-	5. Goto the "Build Phases" tab and click "+" under "Link Binary with Libraries."
-	6. Add libgmp.dylib (if you don't see it, navigate to /usr/local and dig around)
+
+1.	Install brew if you don't already have it:
+	https://github.com/mxcl/homebrew
+	
+2.	Run "sudo brew install gmp"
+
+3.	Add these files to your Xcode project.
+
+4.	In Xcode, click on your project file and goto your target.
+
+5.	Goto the "Build Phases" tab and click "+" under "Link Binary with
+	Libraries."
+
+6.	Add libgmp.dylib.  If you don't see it, navigate to /usr/local and
+	dig around to find it.  Mine is in /usr/local/Cellar/gmp/5.0.1/lib
+	and is symlinked in /usr/local/lib.
 	
 
 And some legal stuff:
