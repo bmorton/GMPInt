@@ -38,6 +38,10 @@
 	return self;
 }
 
+- (void)setUnsignedLongValue:(unsigned long)unsignedLong {
+	mpz_init_set_si(value, unsignedLong);
+}
+
 - (void)addWithGMP:(GMPInt *)op {
 	mpz_t *rptr = [self valPtr];
 	mpz_add(*rptr, value, *[op valPtr]);
@@ -120,6 +124,14 @@
 
 - (BOOL)isOne {
 	return (!mpz_cmp_ui(value, 1) ? YES : NO);
+}
+
+- (BOOL)isPrime {
+	int primeProbability = mpz_probab_prime_p(value, 10);
+	if (primeProbability == 0) {
+		return false;
+	}
+	return true;
 }
 
 - (mpz_t *)valPtr {

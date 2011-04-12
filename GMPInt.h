@@ -21,6 +21,8 @@
 - (GMPInt *)initWithUnsignedLong:(unsigned long)unsignedLong;
 - (GMPInt *)initWithValue:(mpz_t)val;
 
+- (void)setUnsignedLongValue:(unsigned long)unsignedLong;
+
 - (void)addWithGMP:(GMPInt *)op;
 - (void)subtractWithGMP:(GMPInt *)op;
 - (void)multiplyWithGMP:(GMPInt *)op; 
@@ -35,8 +37,9 @@
 - (NSArray *)arrayValue;
 - (NSNumber *)numberValue;
 
-- (BOOL)isZero; 
+- (BOOL)isZero;
 - (BOOL)isOne;
+- (BOOL)isPrime;
 
 - (mpz_t *)valPtr;
 
