@@ -7,7 +7,29 @@
 
 An Objective-C wrapper for the GMP library at http://gmplib.org/.
 by Brian Morton - bmorton@sdreader.com
-Copyright (c) 2011 Brian Morton. All rights reserved.
+Copyright (c) 2011 The San Diego Reader. All rights reserved.
+
+This wrapper will allow you to use basic functionality of the GMP
+C library in Objective-C.  Look at the header file for the methods
+available.
+
+Here's an example of how to use this:
+
+GMPInt *myInteger = [[GMPInt alloc] initWithUnsignedLong:2];
+[myInteger isPrime]; // should return true
+[myInteger nextPrime]; // will set value to 3
+
+// Perform 3^1000000
+[myInteger powerWithUnsignedLong:1000000];
+
+// Multiply a GMPInt with another
+GMPInt *secondInteger = [[GMPInt alloc] initWithUnsignedLong:10];
+[secondInteger powerWithUnsignedLong:100000];
+// myInteger = myInteger * secondInteger
+[myInteger multiplyWithGMP:secondInteger];
+
+// Generate string from integer
+NSString *myString = [myInteger stringValue];
 
 
 To use this with Xcode 4:
